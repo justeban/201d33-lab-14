@@ -8,6 +8,7 @@ var Cart = function(item, quantity) {
 };
 Cart.allContents = [];
 
+
 // Product Contructor
 var Product = function(filePath, name) {
   this.filePath = filePath;

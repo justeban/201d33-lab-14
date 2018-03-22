@@ -2,6 +2,19 @@
 
 function populateForm() {
   //TODO: Add an <option> tag inside the form's select for each product
+ 
+
+  var itemElement=document.getElementById('items');
+
+
+  for ( var i = 0; i < Product.allProducts.length; i++) {
+
+    var optionsElement = document.createElement('option');
+    optionsElement.textContent = Product.allProducts[i].name;
+    itemElement.appendChild(optionsElement);
+
+  }
+
 }
 
 function handleSubmit(event) {
@@ -12,7 +25,7 @@ function handleSubmit(event) {
   saveCartToLocalStorage();
   updateCounter();
   updateCartPreview();
-    
+
 }
 
 function addSelectedItemToCart() {

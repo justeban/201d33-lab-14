@@ -40,5 +40,15 @@ function generateCatalog() {
   new Product('assets/wine-glass.jpg', 'Wine Glass');
 }
 
+function updateCart() {
+  var storedCart = localStorage.getItem('storedcart');
+  var usableStoredCart = JSON.parse(storedCart);
+
+  if (usableStoredCart && usableStoredCart.length) {
+    Cart.allContents = usableStoredCart;
+  }
+}
+
 // Initialize the app
 generateCatalog();
+updateCart();

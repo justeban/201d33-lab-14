@@ -47,9 +47,7 @@ function updateCounter() {
 }
 
 function updateCartPreview() {
-  // TODO: Show the selected item & quantity in the cart div
-  // create unordered list
-  // create list item that has name quantit and image in it
+
   var cartContents = document.getElementById('cartContents');
   var ulElement = document.createElement('ul');
 

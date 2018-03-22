@@ -6,7 +6,7 @@ var Cart = [];
 
 
 function loadCart() {
-  // TODO: Pull the cart (if it exists) from Local Storage and make available to this app
+
 
   var jsonCartData = localStorage.getItem('storedcart');
   var useableCartData =JSON.parse(jsonCartData);
@@ -20,22 +20,30 @@ function loadCart() {
 }
 
 
-
 // TODO: Fill in the <tr>'s under the <tbody> for each item in the cart
 function showCart() {
 
   // TODO: Find the table
+  var cartTable = document.getElementById('cart');
 
   // TODO: Iterate over the items in the cart
+  for (var i = 0;  i < Cart.length; i++ ) { 
 
   // TODO: Create a TR
+    var trElement= document.createElement('tr');
 
+    // TODO: Create a TD for the quantity and the item
+    var tdElement= document.createElement('td');
+    tdElement.textContent= Cart[i].item;
+    trElement.appendChild(tdElement);
 
-  // TODO: Create a TD for the quantity and the item
-
+    var tdElement= document.createElement('td');
+    tdElement.textContent= Cart[i].quantity;
+    trElement.appendChild(tdElement);
+    cartTable.tBodies[0].appendChild(trElement);
 
   // TODO: Add the TR to the TBODY and both TD's to the TR
-
+  }
 }
 
 function removeItemFromCart() {

@@ -7,7 +7,19 @@ var Cart = [];
 
 function loadCart() {
   // TODO: Pull the cart (if it exists) from Local Storage and make available to this app
+
+  var jsonCartData = localStorage.getItem('storedcart');
+  var useableCartData =JSON.parse(jsonCartData);
+
+  if (useableCartData && useableCartData.length) {
+
+    Cart = useableCartData;
+    return Cart;
+  }
+
 }
+
+
 
 // TODO: Fill in the <tr>'s under the <tbody> for each item in the cart
 function showCart() {

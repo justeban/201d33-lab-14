@@ -3,6 +3,7 @@
 // TODO: Create a "Cart" constructor that holds quantity, item, an an array of items in the cart
 
 
+
 // Product Contructor
 var Product = function(filePath, name) {
   this.filePath = filePath;

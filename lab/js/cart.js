@@ -2,11 +2,9 @@
 
 var Cart = [];
 
-
-
+var itemCount = 0;
 
 function loadCart() {
-
 
   var jsonCartData = localStorage.getItem('storedcart');
   var useableCartData =JSON.parse(jsonCartData);
@@ -19,7 +17,6 @@ function loadCart() {
 
 }
 
-
 // TODO: Fill in the <tr>'s under the <tbody> for each item in the cart
 function showCart() {
 
@@ -27,7 +24,7 @@ function showCart() {
   var cartTable = document.getElementById('cart');
 
   // TODO: Iterate over the items in the cart
-  for (var i = 0; i < Cart.length; i++ ) { 
+  for (var i = 0; i < Cart.length; i++ ) {
 
   // TODO: Create a TR
     var trElement= document.createElement('tr');
@@ -71,10 +68,21 @@ function removeItemFromCart(event) {
   showCart();
 }
 
+
+function updateCounter() {
+  var itemCounter = document.getElementById('itemCount');
+  itemCount = Cart.length;
+
+  itemCounter.innerHTML = itemCount;
+
+}
+
 // TODO: Create an event listener so that when the delete link is clicked, the removeItemFromCart method is invoked.
 var cartTable = document.getElementById('cart');
 cartTable.addEventListener('click', removeItemFromCart );
 
 loadCart();
+
+updateCounter();
 
 showCart();

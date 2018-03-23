@@ -65,9 +65,20 @@ function updateCartPreview() {
 
 }
 
+// function updateCartPreviewOnRefresh() {
+//   if (Cart.allContents) {
+//     for (var i = 0; i < Cart.allContents; i++){
+
+//     }
+//   }
+// }
+
 var catalogSubmit = document.getElementById('catalog');
 catalogSubmit.addEventListener('submit', handleSubmit);
 
 updateCounter(); // save cart counter on refresh
 // Start it up ...
+
+// updateCartPreviewOnRefresh();
+
 populateForm();
